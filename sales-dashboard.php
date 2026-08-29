@@ -1,3 +1,12 @@
+<?php
+include 'session-check.php';
+
+if ($_SESSION['role'] != "Sales") {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 

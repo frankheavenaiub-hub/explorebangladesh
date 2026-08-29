@@ -14,8 +14,7 @@
     <span class="bangladesh">Bangladesh</span>
 </h1>
 
-<form>
-
+<form action="registration-controller.php" method="POST" onsubmit="return validate(this)">
 <table align="center">
 
     <tr>
@@ -40,11 +39,13 @@
 
                     <label for="firstName">First Name</label>
                     : <input type="text" id="firstName" name="firstName">
+                    <span id="firstNameErrMsg" class="error-msg"></span>
 
                     <br><br>
 
                     <label for="lastName">Last Name</label>
                     : <input type="text" id="lastName" name="lastName">
+                    <span id="lastNameErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -56,16 +57,19 @@
 
                     <input type="radio" id="female" name="Gender" value="female">
                     <label for="female">Female</label>
+                    <span id="genderErrMsg" class="error-msg"></span>
 
                     <br><br>
 
                     <label for="email">Email</label>
                     : <input type="text" id="email" name="email">
+                    <span id="emailErrMsg" class="error-msg"></span>
 
                     <br><br>
 
                     <label for="phone">Phone</label>
                     : <input type="text" id="phone" name="phone">
+                    <span id="phoneErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -77,6 +81,7 @@
                         <option>Bangladesh</option>
                         <option>Nepal</option>
                     </select>
+                    <span id="countryErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -90,6 +95,7 @@
                         <option>Chattogram</option>
                         <option>Rajshahi</option>
                     </select>
+                    <span id="divisionErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -99,6 +105,7 @@
                     <textarea id="road"
                               name="road"
                               placeholder="Road / Street / City"></textarea>
+                    <span id="roadErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -106,6 +113,7 @@
                     : <input type="text"
                              id="postcode"
                              name="postcode">
+                    <span id="postcodeErrMsg" class="error-msg"></span>
 
                 </fieldset>
 
@@ -119,6 +127,7 @@
                     : <input type="text"
                              id="userName"
                              name="userName">
+                    <span id="userNameErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -126,6 +135,7 @@
                     : <input type="password"
                              id="password"
                              name="password">
+                    <span id="passwordErrMsg" class="error-msg"></span>
 
                     <br><br>
 
@@ -133,6 +143,7 @@
                     : <input type="password"
                              id="confirmPassword"
                              name="confirmPassword">
+                    
 
                     <br><br>
 
@@ -156,6 +167,8 @@
 </table>
 
 </form>
+
+<?php include 'registration-js-validation.php'; ?>
 
 </body>
 

@@ -14,7 +14,7 @@
     <span class="bangladesh">Bangladesh</span>
 </h1>
 
-<form>
+<form action="forgot-password-php-validation.php" method="POST" onsubmit="return validate(this)">
 
 <table align="center">
 
@@ -37,6 +37,7 @@
                 : <input type="text"
                          id="username"
                          name="username">
+                <span id="usernameErrMsg" class="error-msg"></span>
 
                 <br><br><br>
 
@@ -44,6 +45,7 @@
                 : <input type="password"
                          id="newPassword"
                          name="newPassword">
+                <span id="newPasswordErrMsg" class="error-msg"></span>
 
                 <br><br><br>
 
@@ -51,6 +53,7 @@
                 : <input type="password"
                          id="confirmPassword"
                          name="confirmPassword">
+                <span id="confirmPasswordErrMsg" class="error-msg"></span>
 
                 <br><br><br>
 
@@ -70,6 +73,8 @@
 </table>
 
 </form>
+
+<?php include 'forgot-password-js-validation.php'; ?>
 
 </body>
 

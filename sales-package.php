@@ -1,3 +1,12 @@
+<?php
+include 'session-check.php';
+
+if ($_SESSION['role'] != "Sales") {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,33 +36,42 @@
 
                 <h2>ADD / EDIT PACKAGE</h2>
 
+                <form action="sales-package-php-validation.php" method="POST" enctype="multipart/form-data" onsubmit="return validate(this)">
+
                 <div class="form">
 
-                    <label for packagename>Package Name</label>
+                    <label for ="packagename">Package Name</label>
                     <input type="text" id="packagename" name="packagename" value="Sajek Tour">
+                    <span id="packagenameErrMsg" class="error-msg"></span>
 
 
-                    <label for price>Price</label>
+                    <label for ="price">Price</label>
                     <input type="text" id ="price" name="price">
+                    <span id="priceErrMsg" class="error-msg"></span>
 
 
-                    <label for duration>Duration</label>
+                    <label for="duration">Duration</label>
                     <input type="text" id ="duration" name="duration">
+                    <span id="durationErrMsg" class="error-msg"></span>
 
 
-                    <label>Image</label>
-                    <input type="file">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image">
+                    <span id="imageErrMsg" class="error-msg"></span>
 
 
-                    <label>Itinerary</label>
-                    <textarea></textarea>
+                    <label for="itinerary">Itinerary</label>
+                    <textarea id="itinerary" name="itinerary"></textarea>
+                    <span id="itineraryErrMsg" class="error-msg"></span>
 
 
-                    <button class="save-btn">
+                    <button type="submit" class="save-btn">
                         SAVE PACKAGE
                     </button>
 
                 </div>
+
+                </form>
 
             </div>
 
@@ -104,6 +122,8 @@
         </div>
 
     </div>
+
+<?php include 'sales-package-js-validation.php'; ?>
 
 </body>
 

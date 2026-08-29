@@ -1,3 +1,12 @@
+<?php
+include 'session-check.php';
+
+if ($_SESSION['role'] != "Customer") {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -84,6 +93,8 @@
 
        
 
+        <form action="packages-php-validation.php" method="POST" onsubmit="return validate(this)">
+
         <div class="booking-info">
 
             <h2>BOOKING INFORMATION</h2>
@@ -92,21 +103,29 @@
 
                 <label>Travel Date</label>
 
-                <input type="date">
+                <input type="date" id="travelDate" name="travelDate">
+                <span id="travelDateErrMsg" class="error-msg"></span>
 
 
                 <label>Traveler Details</label>
 
                 <input
                     type="text"
+                    id="travelerDetails"
+                    name="travelerDetails"
                     placeholder="Enter traveler name"
                 >
+                <span id="travelerDetailsErrMsg" class="error-msg"></span>
 
             </div>
 
         </div>
 
+        </form>
+
     </div>
+
+<?php include 'packages-js-validation.php'; ?>
 
 </body>
 

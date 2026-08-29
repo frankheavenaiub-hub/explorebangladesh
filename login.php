@@ -14,7 +14,7 @@
     <span class="bangladesh">Bangladesh</span>
 </h1>
 
-<form>
+<form action="login-controller.php" method="POST" onsubmit="return validate(this)">
 
 <table align="center">
 
@@ -38,6 +38,7 @@
                 <input type="text"
                        id="username"
                        name="username">
+                    <span id="userErrMsg" class="error-msg"></span>
 
                 <br><br><br>
 
@@ -46,6 +47,7 @@
                 <input type="password"
                        id="password"
                        name="password">
+                    <span id="passwordErrMsg" class="error-msg"></span>
 
                 <br><br><br><br>
 
@@ -75,7 +77,7 @@
 </table>
 
 </form>
-
+<?php include 'login-js-validation.php'; ?>
 </body>
 
 </html>
