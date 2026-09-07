@@ -38,7 +38,7 @@
                 <input type="text"
                        id="username"
                        name="username">
-                    <span id="userErrMsg" class="error-msg"></span>
+                    <span id="usernameErrMsg" class="error-msg"></span>
 
                 <br><br><br>
 

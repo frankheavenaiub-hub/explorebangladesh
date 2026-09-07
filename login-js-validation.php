@@ -16,10 +16,10 @@ function validate(p) {
         flag = false;
     }
 
-   if (password === "") {
-    alert("Please enter your password");
-    flag = false;
-}
+    if (password === "") {
+        passwordErrMsg.innerHTML = "Please enter your password";
+        flag = false;
+    }
 
     return flag;
 }

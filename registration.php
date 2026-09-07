@@ -140,10 +140,10 @@
                     <br><br>
 
                     <label for="confirmPassword">Confirm Password</label>
-                    : <input type="password"
-                             id="confirmPassword"
-                             name="confirmPassword">
-                    
+                    <input type="password"
+                    id="confirmPassword"
+                    name="confirmPassword">
+                    <span id="confirmPasswordErrMsg" class="error-msg"></span>
 
                     <br><br>
 

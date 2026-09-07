@@ -1,16 +1,20 @@
 <?php
 
+$valid = true;
+
 if (empty($_POST['username'])) {
-    echo "USERNAME / EMAIL IS EMPTY";
+    echo "USERNAME IS EMPTY";
+    $valid = false;
 }
 else {
-    echo "Username: " . $_POST['username'];
+    echo "User Name: " . $_POST['username'];
 }
 
 echo "<br>";
 
 if (empty($_POST['password'])) {
     echo "PASSWORD IS EMPTY";
+    $valid = false;
 }
 else {
     echo "Password: " . $_POST['password'];
